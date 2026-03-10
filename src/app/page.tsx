@@ -1,65 +1,93 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="portfolio-root">
+      {/* Header */}
+      <header className="portfolio-header-main">
+        <div className="portfolio-header-content">
+          <h1 className="portfolio-header-name">Rocio Ayunta Magi</h1>
+          <nav className="portfolio-nav">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Sobre mí</a></li>
+              <li><a href="#projects">Proyectos</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </nav>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      {/* Hero principal */}
+    <section id="home" className="portfolio-hero">
+  <div className="portfolio-hero-inner">
+
+    <div className="portfolio-hero-content">
+      <h2 className="portfolio-hero-name">Hola!</h2>
+      <p className="portfolio-hero-name">Soy Rocio</p>
+      <p className="portfolio-hero-role">Full Stack Developer</p>
+
+      <div className="portfolio-hero-buttons">
+        <a href="#contact" className="portfolio-btn portfolio-btn-accent">Contáctame</a>
+        <a href="/cv.pdf" className="portfolio-btn portfolio-btn-outline" download>Descargar CV</a>
+      </div>
+    </div>
+
+    <div className="portfolio-hero-photo">
+      <img src="/profile.jpg" alt="Foto de Rocio" className="portfolio-photo" />
+    </div>
+
+  </div>
+</section>
+
+      {/* Habilidades */}
+      <section className="portfolio-section portfolio-skills">
+        <h2 className="portfolio-section-title">Habilidades</h2>
+        <div className="portfolio-skills-list">
+          <div className="portfolio-skill"><span title="HTML">🌐</span><p>HTML</p></div>
+          <div className="portfolio-skill"><span title="CSS">🎨</span><p>CSS</p></div>
+          <div className="portfolio-skill"><span title="JavaScript">⚡</span><p>JS</p></div>
+          <div className="portfolio-skill"><span title="React">⚛️</span><p>React</p></div>
+          <div className="portfolio-skill"><span title="Node.js">🟢</span><p>Node</p></div>
+          <div className="portfolio-skill"><span title="Git">🔗</span><p>Git</p></div>
+          <div className="portfolio-skill"><span title="GitHub">🐙</span><p>GitHub</p></div>
         </div>
-      </main>
+      </section>
+
+      {/* Sobre mí */}
+      <section id="about" className="portfolio-section portfolio-about">
+        <h2 className="portfolio-section-title">Sobre mí</h2>
+        <p className="portfolio-section-text">
+          Soy Rocio, Full Stack Developer apasionada por crear soluciones digitales modernas y eficientes. Me especializo en tecnologías web y disfruto trabajar en proyectos que desafían mi creatividad y habilidades técnicas.
+        </p>
+      </section>
+
+      {/* Proyectos */}
+      <section id="projects" className="portfolio-section portfolio-projects">
+        <h2 className="portfolio-section-title">Proyectos</h2>
+        <div className="portfolio-project-cards">
+          <div className="portfolio-project-card">
+            <h3 className="portfolio-project-title">Proyecto 1</h3>
+            <p className="portfolio-project-desc">Breve descripción del proyecto, tecnologías usadas, y enlace si aplica.</p>
+            <a href="#" className="portfolio-project-link">Ver más</a>
+          </div>
+          <div className="portfolio-project-card">
+            <h3 className="portfolio-project-title">Proyecto 2</h3>
+            <p className="portfolio-project-desc">Breve descripción del proyecto, tecnologías usadas, y enlace si aplica.</p>
+            <a href="#" className="portfolio-project-link">Ver más</a>
+          </div>
+          {/* Agrega más tarjetas aquí */}
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section id="contact" className="portfolio-section portfolio-contact">
+        <h2 className="portfolio-section-title">Contacto</h2>
+        <form className="portfolio-contact-form">
+          <input type="text" name="nombre" placeholder="Tu nombre" className="portfolio-input" required />
+          <input type="email" name="email" placeholder="Tu email" className="portfolio-input" required />
+          <textarea name="mensaje" placeholder="Tu mensaje" className="portfolio-input" required></textarea>
+          <button type="submit" className="portfolio-btn portfolio-btn-accent">Enviar</button>
+        </form>
+      </section>
     </div>
   );
 }
