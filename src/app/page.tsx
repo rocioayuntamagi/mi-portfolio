@@ -4,7 +4,7 @@ export default function Home() {
       {/* Header */}
       <header className="portfolio-header-main">
         <div className="portfolio-header-content">
-          <h1 className="portfolio-header-name">Rocio Ayunta Magi</h1>
+          <h1 className="portfolio-header-name"> Rocio Ayunta Magi | <span className="accent-dot"> Developer</span></h1>
           <nav className="portfolio-nav">
             <ul>
               <li><a href="#home">Home</a></li>
@@ -21,9 +21,9 @@ export default function Home() {
   <div className="portfolio-hero-inner">
 
     <div className="portfolio-hero-content">
-      <h2 className="portfolio-hero-name">Hola!</h2>
-      <p className="portfolio-hero-name">Soy Rocio</p>
-      <p className="portfolio-hero-role">Full Stack Developer</p>
+      <h2 className="portfolio-greeting">Hola!</h2>
+      <p className="portfolio-subtitle">Bienvenido a mi portfolio de</p>
+      <p className="portfolio-title">Desarrollo Full Stack Developer</p>
 
       <div className="portfolio-hero-buttons">
         <a href="#contact" className="portfolio-btn portfolio-btn-accent">Contáctame</a>

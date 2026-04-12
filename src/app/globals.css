@@ -3,21 +3,12 @@ body {
   padding: 0;
 }
 
-@import "tailwindcss";
-
 :root {
   --background: #18181b;
   --foreground: #fafafa;
   --accent: #a21caf; /* violeta vibrante */
   --accent-hover: #d946ef; /* fuscia vibrante */
   --accent-alt: #38bdf8; /* celeste vibrante */
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,9 +50,23 @@ body {
 }
 
 .portfolio-header-name {
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+
+
+  font-weight: 900;
   letter-spacing: -0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.accent-dot {
+  color: var(--accent);
+  font-weight: 900;
+
+
+  text-transform: none;
 }
 
 .portfolio-nav ul {
@@ -82,26 +87,89 @@ body {
   color: var(--accent);
 }
 
-/*  HERO PRINCIPAL */
+/* ============================
+   HEADER BOLD CREATIVO — FIX
+============================ */
 
+/* NOMBRE */
+.portfolio-header-name {
+  font-size: 1.9rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.accent-dot {
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/* NAV */
+.portfolio-nav ul {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-nav li {
+  position: relative; /* NECESARIO para el subrayado */
+}
+
+.portfolio-nav a {
+  position: relative;
+  display: inline-block; /* NECESARIO para ver el subrayado */
+  font-weight: 500;
+  color: var(--foreground);
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+/* SUBRAYADO ANIMADO */
+.portfolio-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+.portfolio-nav a:hover {
+  color: var(--accent);
+}
+
+.portfolio-nav a:hover::after {
+  width: 100%;
+}
+
+/*  HERO PRINCIPAL */
 .portfolio-hero {
   width: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   padding: 4rem 0;
-  margin-top: 120px; 
+  margin-top: 120px;
 }
 
 .portfolio-hero-inner {
   width: 100%;
-  max-width: 1200px; 
+ max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem; 
+  padding: 0 2rem;
   gap: 1rem;
 }
 
+/* FOTO */
 .portfolio-hero-photo {
   flex: 0;
   display: flex;
@@ -117,6 +185,37 @@ body {
   border: 4px solid var(--accent);
   box-shadow: 0 0 40px rgba(162, 28, 175, 0.4);
   z-index: 2;
+}
+
+/* ============================
+   TIPOGRAFÍA DEL HERO
+============================ */
+
+/* Hola! — grande, bold, protagonista */
+.portfolio-greeting {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--foreground);
+}
+
+/* Bienvenido… — más suave, elegante, ligera */
+.portfolio-subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin: 0.5rem 0 0;
+  color: var(--foreground);
+  opacity: 0.85;
+}
+
+/* Desarrollo Full Stack Developer — fuerte pero no igual al Hola */
+.portfolio-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--accent);
+  letter-spacing: -0.5px;
 }
 
 /* CÍRCULO DECORATIVO DETRÁS */
