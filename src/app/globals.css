@@ -51,11 +51,9 @@ body {
 
 .portfolio-header-name {
   font-size: 1.9rem;
-
-
   font-weight: 900;
   letter-spacing: -0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -64,8 +62,6 @@ body {
 .accent-dot {
   color: var(--accent);
   font-weight: 900;
-
-
   text-transform: none;
 }
 
@@ -96,7 +92,7 @@ body {
   font-size: 1.9rem;
   font-weight: 900;
   letter-spacing: -0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   display: flex;
   align-items: center;
   gap: 0.15rem;
@@ -123,11 +119,11 @@ body {
 
 .portfolio-nav a {
   position: relative;
-  display: inline-block; /* NECESARIO para ver el subrayado */
   font-weight: 500;
   color: var(--foreground);
   padding-bottom: 4px;
   transition: color 0.2s ease;
+  text-decoration: none;  
 }
 
 /* SUBRAYADO ANIMADO */
@@ -156,7 +152,8 @@ body {
   display: flex;
   justify-content: center;
   padding: 4rem 0;
-  margin-top: 120px;
+  margin-top: 30px;
+  min-height: calc(100vh - 120px);
 }
 
 .portfolio-hero-inner {
@@ -164,9 +161,9 @@ body {
  max-width: 1200px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 2rem;
-  gap: 1rem;
+  gap: 10rem;
 }
 
 /* FOTO */
@@ -178,9 +175,9 @@ body {
 }
 
 .portfolio-photo {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   object-fit: cover;
   border: 4px solid var(--accent);
   box-shadow: 0 0 40px rgba(162, 28, 175, 0.4);
@@ -224,7 +221,7 @@ body {
   position: absolute;
   width: 340px;
   height: 340px;
-  border-radius: 50%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: radial-gradient(circle, rgba(162,28,175,0.35), transparent);
   z-index: 1;
 }
@@ -233,6 +230,7 @@ body {
 .portfolio-hero-content {
   flex: 1;
   text-align: left;
+  max-width: 500px;
 }
 
 .portfolio-hero-name {
@@ -261,6 +259,7 @@ body {
   font-weight: 600;
   font-size: 1rem;
   transition: 0.2s ease;
+  text-decoration: none;  
 }
 
 .portfolio-btn-accent {
@@ -298,17 +297,24 @@ body {
 
 .portfolio-skills {
   width: 100%;
+  height: 100vh; 
   max-width: 1200px;
   padding: 4rem 2rem;
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;   
   text-align: center;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .portfolio-skills-list {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .portfolio-skill {
@@ -316,9 +322,88 @@ body {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(162, 28, 175, 0.3);
+  box-shadow: 0 0 20px rgba(162, 28, 175, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  cursor: pointer;
+
 }
+
+.portfolio-skill:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(162, 28, 175, 0.35);
+}
+
+.portfolio-skill::after {
+  content: attr(data-description); /* toma el texto desde HTML */
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  width: max-content;
+  max-width: 220px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10;
+  border: 1px solid var(--accent);
+}
+
+.portfolio-skill::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.portfolio-skill:hover::after,
+.portfolio-skill:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
 
 .portfolio-skill p {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
+
+
+/* Animación general */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portfolio-skill:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-skill:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-skill:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-skill:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-skill:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-skill:nth-child(6) { animation-delay: 0.6s; }
+.portfolio-skill:nth-child(7) { animation-delay: 0.7s; }
