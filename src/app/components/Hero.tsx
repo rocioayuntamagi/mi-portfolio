@@ -7,7 +7,7 @@ export default function Hero() {
  
         <div className="portfolio-hero-content">
           <h2 className="portfolio-greeting">Hola!</h2>
-          <p className="portfolio-subtitle">Bienvenido a mi portfolio de</p>
+          <p className="portfolio-subtitle">Bienvenidos a mi portfolio de</p>
           <p className="portfolio-title">Full Stack Developer</p>
  
           <div className="portfolio-hero-buttons">
