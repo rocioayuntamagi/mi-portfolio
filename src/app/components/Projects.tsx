@@ -1,19 +1,37 @@
-import { projects } from "../data/projects";
- 
+
+"use client";
+
+import { useInView } from "../hooks/useInView";
+
 export default function Projects() {
+
+  const { ref, isInView } = useInView();
+
   return (
-    <section id="projects" className="portfolio-section portfolio-projects">
+    <section
+      id="projects"
+      ref={ref}
+      className={`portfolio-section portfolio-projects ${
+        isInView ? "is-visible" : ""
+      }`}
+    >
       <h2 className="portfolio-section-title">Proyectos</h2>
-      <div className="portfolio-project-cards">
-        {projects.map((project) => (
-          <div key={project.title} className="portfolio-project-card">
-            <h3 className="portfolio-project-title">{project.title}</h3>
-            <p className="portfolio-project-desc">{project.description}</p>
-            <a href={project.link} className="portfolio-project-link">
-              Ver más
-            </a>
-          </div>
-        ))}
+
+      <div className="portfolio-projects-list">
+        <div className="project-card">
+          <h3>Proyecto 1</h3>
+          <p>Descripción breve del proyecto.</p>
+        </div>
+
+        <div className="project-card">
+          <h3>Proyecto 2</h3>
+          <p>Descripción breve del proyecto.</p>
+        </div>
+
+        <div className="project-card">
+          <h3>Proyecto 3</h3>
+          <p>Descripción breve del proyecto.</p>
+        </div>
       </div>
     </section>
   );

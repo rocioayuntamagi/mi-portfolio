@@ -10,7 +10,7 @@ export default function Header() {
         <nav className="portfolio-nav">
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#about">Sobre mí</a></li>
             <li><a href="#projects">Proyectos</a></li>
             <li><a href="#contact">Contacto</a></li>

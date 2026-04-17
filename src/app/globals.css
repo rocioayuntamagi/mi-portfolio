@@ -308,6 +308,8 @@ body {
   align-items: center;   
   text-align: center;
   animation: fadeUp 0.8s ease forwards;
+  transform: translateY(-20px);
+  margin-top: -120px;
 }
 
 .portfolio-skills-list {
@@ -427,4 +429,245 @@ body {
   100% {
     box-shadow: 0 0 8px rgba(162, 28, 175, 0.4);
   }
+}
+
+/* SECCIONES FULL SCREEN */
+.portfolio-about,
+.portfolio-projects,
+.portfolio-contact {
+  width: 100%;
+  height: 100vh; 
+  max-width: 1200px;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+}
+
+.portfolio-about {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+
+.portfolio-contact {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.portfolio-about,
+.portfolio-projects,
+.portfolio-contact {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Todas las secciones full screen */
+.portfolio-about,
+.portfolio-projects,
+.portfolio-contact {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Animación al entrar en pantalla */
+.portfolio-about,
+.portfolio-projects,
+.portfolio-contact {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.portfolio-about.is-visible,
+.portfolio-projects.is-visible,
+.portfolio-contact.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Evitar que el header tape el título */
+#about,
+#projects,
+#contact {
+  scroll-margin-top: 120px;
+}
+
+.portfolio-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.portfolio-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-hint {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: #ccc;
+}
+
+/* --- SECCIÓN SOBRE MÍ --- */
+
+.portfolio-about {
+  width: 100%;
+  height: 100vh;
+  max-width: 900px;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: auto;
+}
+
+/* Animación */
+.portfolio-about {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.portfolio-about.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtítulo */
+.about-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Texto principal */
+.about-text {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Lista de fortalezas */
+.about-strengths {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.about-strengths li {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.about-strengths li:hover {
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+/* CTA */
+.about-cta {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 12px rgba(162, 28, 175, 0.4);
+  
+}
+
+.about-cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.8);
+}
+
+/* Scroll offset */
+#about {
+  scroll-margin-top: 120px;
+}
+
+/* --- RECORRIDO / JOURNEY --- */
+
+.about-journey {
+  margin-top: 2.5rem;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Cada paso */
+.journey-step {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--accent);
+  box-shadow: 0 0 12px rgba(162, 28, 175, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Animación cuando la sección aparece */
+.portfolio-about.is-visible .journey-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay escalonado */
+.portfolio-about.is-visible .journey-step:nth-child(1) { transition-delay: 0.1s; }
+.portfolio-about.is-visible .journey-step:nth-child(2) { transition-delay: 0.25s; }
+.portfolio-about.is-visible .journey-step:nth-child(3) { transition-delay: 0.4s; }
+.portfolio-about.is-visible .journey-step:nth-child(4) { transition-delay: 0.55s; }
+
+/* Títulos */
+.journey-step h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Texto */
+.journey-step p {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.5;
 }
