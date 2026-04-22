@@ -491,7 +491,7 @@ html {
 
 .portfolio-projects {
   width: 100%;
-  height: 100vh;
+  height: auto;
   max-width: 1200px;
   padding: 8rem 2rem 4rem;
   margin: 0 auto;
@@ -596,8 +596,8 @@ html {
 
 .portfolio-contact {
   width: 100%;
-  height: 100vh;
-  max-width: 1200px;
+  height: auto;
+  min-width: auto;
   padding: 3rem 2rem;
   margin: 0 auto;
   display: flex;
@@ -617,12 +617,120 @@ html {
 }
 
 /* ============================================================
+   CONTACTO — BOTONES
+============================================================ */
+
+.portfolio-contact-text {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-contact-links {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+}
+
+.contact-btn-linkedin {
+  background: #0077b5;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(0, 119, 181, 0.4);
+}
+
+.contact-btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 0 16px rgba(37, 211, 102, 0.4);
+}
+
+.contact-btn-email {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(162, 28, 175, 0.4);
+}
+
+.contact-btn-email:hover {
+  background: var(--accent-hover);
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.portfolio-footer {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 2.5rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-footer-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.footer-links a {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  opacity: 0.4;
+  margin: 0;
+}
+
+/* ============================================================
    SCROLL OFFSET (compensa el header fijo)
 ============================================================ */
 
 #home,
-#about,
-#contact {
+#about
+{
   scroll-margin-top: 90px;
 }
 
@@ -636,6 +744,10 @@ html {
 
 #projects {
   scroll-margin-top: 50px;
+}
+
+#contact {
+  scroll-margin-top: 140px;
 }
 
 /* ============================================================
@@ -667,3 +779,4 @@ html {
     text-align: center;
   }
 }
+
