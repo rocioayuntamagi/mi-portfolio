@@ -52,7 +52,7 @@ html {
 
 .portfolio-header-main {
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 0.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +71,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .portfolio-header-name {
@@ -85,8 +86,8 @@ html {
 
 .accent-dot {
   color: var(--accent);
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* ============================================================
@@ -780,3 +781,168 @@ html {
   }
 }
 
+/* ============================================================
+   HEADER BASE
+============================================================ */
+
+.portfolio-header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: var(--background);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nombre */
+.portfolio-header-name {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.header-separator {
+  margin: 0 0.5rem;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+/* Nav escritorio */
+.portfolio-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.portfolio-nav a {
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.portfolio-nav a:hover {
+  color: var(--accent);
+}
+
+/* ============================================================
+   HAMBURGUESA
+============================================================ */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-right: -15px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--foreground);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   MENÚ MÓVIL CENTRADO
+============================================================ */
+
+.portfolio-nav-mobile {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  background: var(--background);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: none;
+}
+
+.portfolio-nav-mobile.is-open {
+  max-height: 400px;
+}
+
+.portfolio-nav-mobile ul {
+  list-style: none;
+  margin: 0;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.portfolio-nav-mobile a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.portfolio-nav-mobile a:hover {
+  color: var(--accent);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Ocultar nav escritorio */
+  .portfolio-nav {
+    display: none;
+  }
+
+  /* Mostrar hamburguesa */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mostrar menú móvil */
+  .portfolio-nav-mobile {
+    display: block;
+  }
+
+  /* Alinear header */
+  .portfolio-header-content {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+  }
+
+  /* Ajuste del nombre */
+  .portfolio-header-name {
+    font-size: 1.2rem;
+  }
+}
