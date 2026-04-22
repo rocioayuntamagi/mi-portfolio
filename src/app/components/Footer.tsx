@@ -7,9 +7,9 @@ export default function Footer() {
   const { ref, isInView } = useInView();
   const [copied, setCopied] = useState(false);
 
-  const email = "tuemail@gmail.com"; // ← cambiá
-  const linkedin = "https://www.linkedin.com/in/tu-perfil"; // ← cambiá
-  const whatsapp = "https://wa.me/5491100000000"; // ← cambiá
+const email = "ayuntamagirocio@gmail.com";
+const linkedin = "https://www.linkedin.com/in/rocio-ayunta-magi-2936993b2";
+const whatsapp = "https://wa.me/5491149286536";
   const currentYear = new Date().getFullYear();
 
   function copyEmail() {

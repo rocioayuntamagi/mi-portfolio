@@ -17,7 +17,8 @@ export default function Hero() {
             <a
               href="/cv.pdf"
               className="portfolio-btn portfolio-btn-outline"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Descargar CV
             </a>
