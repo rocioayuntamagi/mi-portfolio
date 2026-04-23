@@ -9,6 +9,7 @@ export default function Projects() {
   return (
     <section id="projects" className="portfolio-section portfolio-projects">
       <h2 className="portfolio-section-title">Proyectos</h2>
+      <p className="projects-hint"> Hacé clic en cada tarjeta para ver el proyecto. Si tocás el ícono de GitHub, vas directo al código.</p>
 
       <div className="projects-grid">
 

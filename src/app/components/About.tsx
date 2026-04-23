@@ -16,14 +16,12 @@ export default function About() {
       <h2 className="portfolio-section-title">Sobre mí</h2>
 
       <h3 className="about-subtitle">
-        Full Stack Developer con enfoque en interfaces modernas y soluciones claras.
+        Full Stack Developer formada en la Diplomatura Universitaria en Programación Full Stack 
+        <h4> (UTN Buenos Aires) </h4>
       </h3>
 
       <p className="about-text">
-        Combino mi experiencia en áreas administrativas y analíticas con el desarrollo web,
-        creando interfaces limpias, funcionales y orientadas a la experiencia del usuario.
-        Me motiva resolver problemas de forma eficiente y construir productos que se sientan
-        intuitivos y visualmente atractivos.
+       Integro mi experiencia administrativa con el desarrollo web para crear interfaces modernas, responsivas y centradas en el usuario. Trabajo con buenas prácticas, componentes reutilizables y soluciones claras que aportan valor real a los proyectos.
       </p>
 
       <ul className="about-strengths">
