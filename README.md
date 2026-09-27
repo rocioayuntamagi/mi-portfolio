@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Portfolio Personal — Rocío Ayunta Magi
 
-## Getting Started
+Este es mi portfolio personal, diseñado y desarrollado desde cero con el objetivo de presentar mis proyectos, habilidades y experiencia como desarrolladora Full Stack en formación.  
+La aplicación está construida con **Next.js**, **TypeScript** y **CSS personalizado**, priorizando rendimiento, accesibilidad y una estética moderna.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Tecnologías utilizadas
+
+- **Next.js 14** — Framework principal
+- **React** — Librería para la UI
+- **TypeScript** — Tipado estático
+- **CSS personalizado** — Estilos propios sin frameworks
+- **FontAwesome** — Íconos
+- **Vercel** — Hosting y despliegue
+
+---
+
+## 📁 Estructura del proyecto
+
+src/
+├── app/
+│   ├── components/   # Componentes reutilizables
+│   ├── hooks/        # Hooks personalizados
+│   ├── globals.css   # Estilos globales
+│   ├── layout.tsx    # Layout principal
+│   └── page.tsx      # Página principal
+└── public/           # Imágenes y recursos
+
+
+---
+
+## 🧩 Secciones del portfolio
+
+- **Header** — Navegación principal  
+- **Hero** — Presentación personal  
+- **Skills** — Tecnologías y herramientas  
+- **About** — Sobre mí  
+- **Projects** — Proyectos destacados  
+- **Footer** — Contacto y redes  
+
+---
+
+## 🛠️ Proyectos incluidos
+
+### 1️⃣ Sistema administrativo para maxikiosco — *En proceso*  
+Gestión de stock, ventas y productos.  
+**GitHub:** https://github.com/rocioayuntamagi/kiosco-YAYA  
+**Vercel:** https://kiosco-yaya.vercel.app/
+
+### 2️⃣ E‑commerce estilo Mercado Libre — *En desarrollo*  
+Catálogo, filtros, carrito y navegación clara.  
+**GitHub:** https://github.com/rocioayuntamagi/backend-proyecto-final  
+**Vercel:** https://proyecto-final-e-commerce-ayunta.vercel.app/
+
+### 3️⃣ Portfolio personal — *En proceso*  
+Este mismo portfolio, creado desde cero con Next.js + TS.
+
+### 4️⃣ Chat en tiempo real — *En proceso*  
+Mensajería con WebSockets y estados en tiempo real.  
+**GitHub:** https://github.com/rocioayuntamagi/proyecto-final  
+**Vercel:** https://clondechat-six.vercel.app/
+
+### 5️⃣ Sistema administrativo general — *Próximamente*  
+Paneles, formularios y flujo de datos.
+
+---
+
+## ▶️ Cómo correr el proyecto
+
+1. Clonar el repositorio:
+
+git clone https://github.com/tu-usuario/tu-portfolio.git
+
+2. Instalar dependencias:
+
+npm install
+
+
+3. Iniciar el servidor de desarrollo:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Abrir en el navegador:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El proyecto está desplegado en **Vercel**.  
+Podés acceder desde:  
+👉 http://rocioayuntafullstack.vercel.app
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👩‍💻 Autora
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Rocío Ayunta Magi**  
+Desarrolladora Full Stack en formación  
+Avellaneda, Buenos Aires — Argentina
+
+- GitHub: https://github.com/rocioayuntamagi  
+- LinkedIn: https://www.linkedin.com/in/rocio-ayunta-magi-2936993b2/ 
+- Email: ayuntamagirocio@gmail.com
+
+---
+
+## ⭐ Licencia
+
+Este proyecto está bajo licencia MIT. Podés usarlo como referencia o inspiración.
+
