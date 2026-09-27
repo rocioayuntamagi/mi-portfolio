@@ -1,4 +1,4 @@
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 /* ============================================================
    VARIABLES Y RESET
@@ -949,7 +949,7 @@ html {
   .portfolio-header-content {
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 1.5rem;
   }
 
   /* Ajuste del nombre */
@@ -995,7 +995,7 @@ html {
   .portfolio-header-content {
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 3rem;
+    padding: 1.2rem 1.5rem;
   }
 
   .portfolio-header-name {
@@ -1073,7 +1073,7 @@ html {
   /* ABOUT */
   .portfolio-about {
     height: auto;
-    padding: 3rem 1rem;
+    padding: 1.2rem 1.5rem;
   }
 
   .about-journey {
