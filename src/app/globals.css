@@ -162,6 +162,8 @@ html {
   text-align: left;
   max-width: 500px;
   margin-top: -120px;
+  margin: 2rem;
+
 }
 
 .portfolio-greeting {
@@ -220,9 +222,36 @@ html {
 ============================================================ */
 
 .portfolio-hero-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: start;
   gap: 1rem;
   margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-btn-cert {
+  grid-column: 1 / -1;
+  justify-self: center;
+  order: 3;
+
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.portfolio-btn-cert:hover {
+  background: var(--accent);
+  color: #18181b;
+  transform: translateY(-3px);
+  box-shadow: 0 0 16px rgba(245, 51, 206, 0.921);
+}
+
+.portfolio-btn-cert:active {
+  transform: translateY(0);
 }
 
 .portfolio-btn {
@@ -252,6 +281,91 @@ html {
   background: var(--accent);
   color: #fff;
 }
+
+/* POPUP */
+.cert-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.cert-modal {
+  background: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 0 40px rgba(162, 28, 175, 0.4);
+}
+
+.cert-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cert-item img {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(162, 28, 175, 0.3);
+}
+
+.cert-item p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cert-close-btn {
+  margin-top: 2rem;
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cert-close-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* BOTÓN DE TEXTO "Ver certificaciones" */
+.portfolio-cert-link {
+  all: unset; /* ← ESTA LÍNEA ES LA CLAVE */
+  display: block;
+  margin-top: 3rem;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--accent);
+  transition: 0.25s ease;
+}
+
+/* EFECTO LUMINOSO */
+.portfolio-cert-link:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--accent), 0 0 12px var(--accent);
+}
+
+
 
 /* ============================================================
    SKILLS
@@ -398,6 +512,13 @@ html {
   margin-bottom: 1.5rem;
   opacity: 0.8;
 }
+
+.about-subtitle-detail {
+  margin-top: -0.3rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
 
 .about-text {
   max-width: 700px;
@@ -970,6 +1091,10 @@ html {
 
   .portfolio-hero-content {
     text-align: center;
+  }
+
+  .portfolio-hero-buttons {
+    justify-content: center;
   }
 }
 

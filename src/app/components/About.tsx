@@ -16,9 +16,13 @@ export default function About() {
       <h2 className="portfolio-section-title">Sobre mí</h2>
 
       <h3 className="about-subtitle">
-        Full Stack Developer formada en la Diplomatura Universitaria en Programación Full Stack 
-        <h4> (UTN Buenos Aires) </h4>
-      </h3>
+  Full Stack Developer formada en la Diplomatura Universitaria en Programación Full Stack
+</h3>
+
+<h4 className="about-subtitle-detail">
+  (UTN Buenos Aires)
+</h4>
+
 
       <p className="about-text">
        Integro mi experiencia administrativa con el desarrollo web para crear interfaces modernas, responsivas y centradas en el usuario. Trabajo con buenas prácticas, componentes reutilizables y soluciones claras que aportan valor real a los proyectos.
