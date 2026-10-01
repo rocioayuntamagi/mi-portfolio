@@ -7,7 +7,7 @@ export default function Projects() {
   const { ref, isInView } = useInView();
 
   return (
-    <section id="projects" className="portfolio-section portfolio-projects">
+    <section id="projects" ref={ref} className={`portfolio-section portfolio-projects ${isInView ? "is-visible" : ""}`}>
       <h2 className="portfolio-section-title">Proyectos</h2>
       <p className="projects-hint">
         Hacé clic en cada tarjeta para ver el proyecto. Si tocás el ícono de GitHub, vas directo al código.
@@ -16,7 +16,7 @@ export default function Projects() {
       <div className="projects-grid">
 
         {/* 1 — Sistema administrativo para maxikiosco */}
-        <div className="project-card-wrapper">
+        <div className="project-card-wrapper project-card-wrapper-linked">
           <a
             href="https://kiosco-yaya.vercel.app/"
             target="_blank"
@@ -40,13 +40,14 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="project-github"
+            aria-label="Ver código en GitHub del sistema para maxikiosco"
           >
             <i className="fa-brands fa-github"></i>
           </a>
         </div>
 
         {/* 2 — E-commerce */}
-        <div className="project-card-wrapper">
+        <div className="project-card-wrapper project-card-wrapper-linked">
           <a
             href="https://proyecto-final-e-commerce-ayunta.vercel.app"
             target="_blank"
@@ -70,6 +71,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="project-github"
+            aria-label="Ver código en GitHub del e-commerce"
           >
             <i className="fa-brands fa-github"></i>
           </a>
@@ -91,7 +93,7 @@ export default function Projects() {
         </div>
 
         {/* 4 — Chat en tiempo real */}
-        <div className="project-card-wrapper">
+        <div className="project-card-wrapper project-card-wrapper-linked">
           <a
             href="https://clondechat-six.vercel.app"
             target="_blank"
@@ -114,6 +116,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             className="project-github"
+            aria-label="Ver código en GitHub del chat en tiempo real"
           >
             <i className="fa-brands fa-github"></i>
           </a>

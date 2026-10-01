@@ -1,9 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
   function closeMenu() {
     setMenuOpen(false);
@@ -32,9 +45,13 @@ export default function Header() {
 
         {/* Botón hamburguesa */}
         <button
+          ref={menuButtonRef}
+          type="button"
           className={`hamburger ${menuOpen ? "is-open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Abrir menú"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           <span />
           <span />
@@ -44,7 +61,7 @@ export default function Header() {
       </div>
 
       {/* Menú móvil */}
-      <nav className={`portfolio-nav-mobile ${menuOpen ? "is-open" : ""}`}>
+      <nav id="mobile-menu" className="portfolio-nav-mobile" hidden={!menuOpen} aria-label="Navegación móvil">
         <ul>
           <li><a href="#home" onClick={closeMenu}>Home</a></li>
           <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
