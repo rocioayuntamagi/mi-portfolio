@@ -23,7 +23,6 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="project-card"
           >
-            <span className="project-status">En proceso</span>
             <h3>Sistema administrativo para maxikiosco</h3>
             <p>
               Sistema real desarrollado para gestionar stock, ventas y productos de un maxikiosco.
@@ -54,7 +53,6 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="project-card"
           >
-            <span className="project-status">En desarrollo</span>
             <h3>E‑commerce estilo Mercado Libre</h3>
             <p>
               Plataforma de compra/venta con catálogo, filtros y carrito, enfocada en navegación clara
@@ -80,7 +78,6 @@ export default function Projects() {
         {/* 3 — Portfolio personal */}
         <div className="project-card-wrapper">
           <div className="project-card">
-            <span className="project-status">En proceso</span>
             <h3>Portfolio personal</h3>
             <p>
               Este mismo portfolio — diseñado y desarrollado desde cero con Next.js, TypeScript y CSS personalizado.
@@ -101,7 +98,6 @@ export default function Projects() {
             rel="noopener noreferrer"
             className="project-card"
           >
-            <span className="project-status">En proceso</span>
             <h3>Chat en tiempo real</h3>
             <p>
               Aplicación de mensajería enfocada en comunicación en tiempo real, manejo de estados y experiencia fluida.
