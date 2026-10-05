@@ -1035,6 +1035,28 @@ html {
   scroll-margin-top: 140px;
 }
 
+@media (min-width: 901px) {
+  .contact-dock {
+    display: none;
+  }
+
+  .portfolio-root {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .portfolio-header-main,
+  .portfolio-header-content,
+  .portfolio-hero-inner,
+  .portfolio-skills,
+  .portfolio-about,
+  .portfolio-projects,
+  .portfolio-contact,
+  .portfolio-footer {
+    box-sizing: border-box;
+  }
+}
+
 /* ============================================================
    ANIMACIONES DE ENTRADA (clases genéricas)
 ============================================================ */

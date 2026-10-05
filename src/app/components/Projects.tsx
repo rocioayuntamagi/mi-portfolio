@@ -122,22 +122,6 @@ export default function Projects() {
           </a>
         </div>
 
-        {/* 5 — Sistema administrativo (próximamente) */}
-        <div className="project-card-wrapper">
-          <div className="project-card">
-            <span className="project-status">Próximamente</span>
-            <h3>Sistema administrativo</h3>
-            <p>
-              Proyecto orientado a resolver necesidades reales de gestión, con paneles, formularios y flujo de datos.
-            </p>
-            <div className="project-tags">
-              <span>React</span>
-              <span>Node</span>
-              <span>Base de datos</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );
