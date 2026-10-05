@@ -1666,7 +1666,32 @@ html {
   }
 
   .portfolio-skills-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 360px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem 0.75rem;
+    margin: 1.5rem auto 0;
+    justify-items: center;
+  }
+
+  .portfolio-skill {
+    margin-bottom: 0;
+  }
+
+  .portfolio-skill:nth-child(3n + 1):last-child {
+    grid-column: 2;
+  }
+
+  .portfolio-skill::after {
+    transform: translateY(10px);
+  }
+
+  .portfolio-skill:nth-child(3n)::after {
+    left: auto;
+    right: 0;
+  }
+
+  .portfolio-skill:hover::after {
+    transform: translateY(18px);
   }
 
   .about-subtitle-detail {
@@ -1710,6 +1735,10 @@ html {
 
   .portfolio-contact {
     padding: 2rem 1rem;
+  }
+
+  .portfolio-contact-links {
+    display: none;
   }
 
   .contact-dock {
