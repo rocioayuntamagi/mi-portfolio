@@ -23,6 +23,21 @@ export default function About() {
   (UTN Buenos Aires)
 </h4>
 
+      <div className="about-experience">
+        <div className="journey-step experience-card">
+          <div className="experience-header">
+            <h4>The Cave — Full Stack Developer Jr</h4>
+            <span className="experience-period">2026 – Actualidad</span>
+          </div>
+          <ul className="experience-list">
+            <li>Desarrollo de funcionalidades frontend con React.</li>
+            <li>Implementación de APIs REST con Node.js.</li>
+            <li>Integración con bases de datos MongoDB.</li>
+            <li>Participación en proyectos reales de clientes.</li>
+            <li>Trabajo colaborativo con el equipo de desarrollo.</li>
+          </ul>
+        </div>
+      </div>
 
       <p className="about-text">
        Integro mi experiencia administrativa con el desarrollo web para crear interfaces modernas, responsivas y centradas en el usuario. Trabajo con buenas prácticas, componentes reutilizables y soluciones claras que aportan valor real a los proyectos.

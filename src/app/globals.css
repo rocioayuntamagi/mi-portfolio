@@ -501,7 +501,8 @@ html {
 
 .portfolio-about {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   max-width: 900px;
   padding: 3rem 2rem;
   margin: 0 auto;
@@ -625,6 +626,66 @@ html {
   margin: 0;
   opacity: 0.85;
   line-height: 1.5;
+}
+
+/* Experiencia laboral */
+.about-experience {
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.experience-card {
+  text-align: left;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.experience-header h4 {
+  margin: 0;
+}
+
+.experience-period {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(217, 70, 239, 0.15);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.experience-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.experience-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 /* ============================================================
