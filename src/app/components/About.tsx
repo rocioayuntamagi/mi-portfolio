@@ -1,11 +1,64 @@
 "use client";
 
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { createPortal } from "react-dom";
 import { useInView } from "../hooks/useInView";
 
 export default function About() {
   const { ref, isInView } = useInView();
+  const [contactOpen, setContactOpen] = useState(false);
+  const contactLinkRef = useRef<HTMLAnchorElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!contactOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const trigger = contactLinkRef.current;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+
+    const media = window.matchMedia("(max-width: 768px)");
+    function onChange(event: MediaQueryListEvent) {
+      if (!event.matches) setContactOpen(false);
+    }
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setContactOpen(false);
+      if (event.key !== "Tab") return;
+
+      const focusable = panelRef.current?.querySelectorAll<HTMLElement>("button, a[href]");
+      if (!focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    media.addEventListener("change", onChange);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      media.removeEventListener("change", onChange);
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      trigger?.focus();
+    };
+  }, [contactOpen]);
+
+  function openContact(event: MouseEvent<HTMLAnchorElement>) {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    event.preventDefault();
+    setContactOpen(true);
+  }
 
   return (
+    <>
     <section
       id="about"
       ref={ref}
@@ -81,7 +134,36 @@ export default function About() {
   </div>
 </div>
 
-      <a href="#contact" className="about-cta">Trabajemos juntos</a>
+      <a href="#contact" ref={contactLinkRef} onClick={openContact} className="about-cta">Trabajemos juntos</a>
     </section>
+    {contactOpen && typeof document !== "undefined" && createPortal(
+      <div
+        className="about-contact-overlay"
+        onClick={(event) => {
+          if (event.target === event.currentTarget) setContactOpen(false);
+        }}
+      >
+        <div ref={panelRef} className="about-contact-panel" role="dialog" aria-modal="true" aria-labelledby="about-contact-title">
+          <button ref={closeRef} type="button" className="about-contact-close" onClick={() => setContactOpen(false)}>
+            Cerrar
+          </button>
+          <h2 id="about-contact-title">Trabajemos juntos</h2>
+          <a href="https://wa.me/5491149286536" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-whatsapp">
+            <i className="fab fa-whatsapp" aria-hidden="true" />
+            WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/rocio-ayunta-magi-2936993b2" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-linkedin">
+            <i className="fab fa-linkedin" aria-hidden="true" />
+            LinkedIn
+          </a>
+          <a href="mailto:ayuntamagirocio@gmail.com" className="contact-btn contact-btn-email">
+            <i className="fas fa-envelope" aria-hidden="true" />
+            Email
+          </a>
+        </div>
+      </div>,
+      document.body
+    )}
+    </>
   );
 }
