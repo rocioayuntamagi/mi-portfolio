@@ -143,11 +143,10 @@ export default function About() {
           if (event.target === event.currentTarget) setContactOpen(false);
         }}
       >
-        <div ref={panelRef} className="about-contact-panel" role="dialog" aria-modal="true" aria-labelledby="about-contact-title">
-          <button ref={closeRef} type="button" className="about-contact-close" onClick={() => setContactOpen(false)}>
-            Cerrar
+        <div ref={panelRef} className="about-contact-panel" role="dialog" aria-modal="true" aria-label="Opciones de contacto">
+          <button ref={closeRef} type="button" className="about-contact-close" aria-label="Cerrar panel de contacto" onClick={() => setContactOpen(false)}>
+            ×
           </button>
-          <h2 id="about-contact-title">Trabajemos juntos</h2>
           <a href="https://wa.me/5491149286536" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-whatsapp">
             <i className="fab fa-whatsapp" aria-hidden="true" />
             WhatsApp
