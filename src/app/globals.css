@@ -1237,17 +1237,38 @@ html {
 ============================================================ */
 
 @media (max-width: 900px) {
+  .portfolio-hero {
+    min-height: 0;
+  }
+
   .portfolio-hero-inner {
+    max-width: 640px;
     flex-direction: column-reverse;
+    gap: 2rem;
     text-align: center;
   }
 
   .portfolio-hero-content {
+    width: 100%;
+    margin: 0;
     text-align: center;
   }
 
   .portfolio-hero-buttons {
     justify-content: center;
+  }
+
+  .portfolio-about {
+    text-align: left;
+    align-items: stretch;
+  }
+
+  .about-strengths {
+    justify-content: flex-start;
+  }
+
+  .about-cta {
+    align-self: flex-start;
   }
 }
 
@@ -1460,5 +1481,247 @@ html {
 
   .contact-btn i {
     font-size: 1.8rem;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .portfolio-root {
+    min-width: 0;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+
+  #home,
+  #skills,
+  #about,
+  #projects,
+  #contact {
+    scroll-margin-top: 72px;
+  }
+
+  .portfolio-header-main {
+    padding: 0;
+  }
+
+  .portfolio-header-content {
+    width: 100%;
+    padding: 0.65rem 1rem;
+  }
+
+  .portfolio-header-name {
+    min-width: 0;
+    font-size: clamp(0.85rem, 3.3vw, 1.1rem);
+    line-height: 1.2;
+  }
+
+  .header-separator {
+    margin: 0 0.2rem;
+  }
+
+  .portfolio-header-name .accent-dot {
+    font-size: 0.85em;
+  }
+
+  .hamburger {
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  .portfolio-nav-mobile[hidden] {
+    display: none;
+  }
+
+  .portfolio-nav-mobile {
+    width: min(calc(100% - 2rem), 420px);
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+  }
+
+  .portfolio-nav-mobile a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .portfolio-hero {
+    margin-top: 65px;
+    padding: 1.25rem 1rem 0.5rem;
+  }
+
+  .portfolio-hero-inner {
+    padding: 0;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .portfolio-hero-content {
+    max-width: none;
+    text-align: left;
+  }
+
+  .portfolio-greeting {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .portfolio-subtitle {
+    font-size: 1rem;
+  }
+
+  .portfolio-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .portfolio-hero-buttons {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .portfolio-btn {
+    padding: 0.6rem 0.5rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .portfolio-btn-cert {
+    justify-self: stretch;
+  }
+
+  .portfolio-photo {
+    width: clamp(128px, 32vw, 164px);
+    height: clamp(128px, 32vw, 164px);
+  }
+
+  .portfolio-hero-photo::before {
+    width: 110%;
+    height: 110%;
+  }
+
+  .cert-modal-overlay {
+    padding: 0.75rem;
+  }
+
+  .cert-modal {
+    max-height: calc(100dvh - 1.5rem);
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .cert-title {
+    font-size: 1.35rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portfolio-section-title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .portfolio-skills,
+  .portfolio-about,
+  .portfolio-projects {
+    padding: 1.5rem 1rem;
+  }
+
+  .portfolio-skills,
+  .portfolio-projects {
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .portfolio-skills-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-subtitle-detail {
+    margin-bottom: 1rem;
+  }
+
+  .about-strengths {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+
+  .about-journey {
+    padding: 0;
+  }
+
+  .journey-step {
+    margin: 0;
+  }
+
+  .about-cta {
+    margin-top: 1rem;
+  }
+
+  .projects-grid {
+    padding: 0;
+  }
+
+  .project-card {
+    grid-template-columns: 32px minmax(0, 1fr);
+    column-gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .project-card-wrapper {
+    grid-template-columns: minmax(0, 1fr) 40px;
+  }
+
+  .project-tags {
+    min-width: 0;
+  }
+
+  .portfolio-contact {
+    padding: 2rem 1rem;
+  }
+
+  .contact-dock {
+    position: fixed;
+    bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 90;
+    width: min(calc(100% - 2rem), 390px);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35rem;
+    padding: 0.35rem;
+    background: #24232a;
+    border: 1px solid rgba(217, 70, 239, 0.4);
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  }
+
+  .contact-dock .contact-btn {
+    min-width: 0;
+    min-height: 44px;
+    width: auto !important;
+    height: auto !important;
+    padding: 0.2rem 0.15rem !important;
+    border-radius: 0.65rem;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .contact-dock .contact-btn i {
+    font-size: 1.05rem;
   }
 }
