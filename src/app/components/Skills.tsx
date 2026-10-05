@@ -16,17 +16,16 @@ export default function Skills() {
       }`}
     >
       <h2 className="portfolio-section-title">Stack Tecnológico</h2>
-      <p className="skills-hint">Pasá el mouse sobre cada herramienta para ver más</p>
+      <p className="skills-hint">Tocá o seleccioná una herramienta para ver más</p>
       <div className="portfolio-skills-list">
         {skills.map((skill) => (
-          <div
-            key={skill.name}
-            className="portfolio-skill"
-            data-description={skill.description}
-          >
-            <span title={skill.name}>{skill.emoji}</span>
-            <p>{skill.name}</p>
-          </div>
+          <details key={skill.name} className="portfolio-skill">
+            <summary>
+              <span aria-hidden="true">{skill.emoji}</span>
+              <span>{skill.name}</span>
+            </summary>
+            <p>{skill.description}</p>
+          </details>
         ))}
       </div>
     </section>
