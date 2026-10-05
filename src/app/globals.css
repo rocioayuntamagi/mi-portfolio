@@ -979,6 +979,10 @@ html {
   gap: 1rem;
 }
 
+.contact-mobile-tagline {
+  display: none;
+}
+
 .footer-name {
   font-size: 1.1rem;
   font-weight: 700;
@@ -1259,6 +1263,22 @@ html {
 ============================================================ */
 
 @media (max-width: 900px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  .portfolio-root {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
   .portfolio-hero {
     min-height: 0;
   }
@@ -1505,12 +1525,6 @@ html {
     font-size: 1.8rem;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
   .portfolio-root {
     min-width: 0;
     padding-bottom: calc(80px + env(safe-area-inset-bottom));
@@ -1735,6 +1749,26 @@ html {
 
   .portfolio-contact {
     padding: 2rem 1rem;
+  }
+
+  .portfolio-contact-text {
+    margin: 0;
+  }
+
+  .contact-mobile-tagline {
+    display: block;
+    max-width: 320px;
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  .footer-divider {
+    width: min(100%, 260px);
+    height: 1px;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.12);
   }
 
   .portfolio-contact-links {

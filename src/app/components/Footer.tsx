@@ -38,6 +38,10 @@ export default function Footer() {
           ¿Tenés un proyecto en mente o querés charlar? ¡Escribime!
         </p>
 
+        <p className="contact-mobile-tagline">
+          Desarrolladora Full Stack enfocada en soluciones modernas.
+        </p>
+
         <div className="portfolio-contact-links">
           <a
             href={linkedin}
